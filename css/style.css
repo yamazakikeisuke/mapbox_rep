@@ -3,15 +3,17 @@ header {
   z-index: 999;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 50%;
   height:50px;
   padding: 20px 40px;
-  background: rgb(53, 52, 52);
+  background: rgba(53, 52, 52, 0);
   box-sizing: border-box;
+  font-family: 'Yuji Boku', serif;
+  font-size:large;
 }
 header .inner {
   position: relative;
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   height: 100%;
 }
@@ -44,7 +46,7 @@ header .navi li a {
   display: block;
   box-sizing: border-box;
   text-decoration: none;
-  color: #333;
+  color: aliceblue;
 }
 header .navi li a:hover {
   text-decoration: underline;
@@ -57,5 +59,17 @@ body {
   padding: 0;
 }
 #main {
-  padding-top:50px;
+  padding-top:0px;
+  background-color: rgb(47, 47, 47);
+}
+
+.border-radius {
+  width: 350px;
+  height: 50px;
+  line-height: 50px;
+  background-color: rgba(46, 42, 108, 0.815);
+  border-radius: 100vh;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
 }
