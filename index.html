@@ -5,24 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoNameRiverMap</title>
 	  <!-- SCRIPTS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
     <!-- STYLE -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 </head>
 <header id="header">
     <div class="inner">
       <p class="logo">
-        <div class="border-radius">NIPPON・名無し川マップ
-        </div>
+        <div class="border-radius">NIPPON・名無し川マップ</div>
       </p>
       </ul>
     </div>
 </header>
 <body>
-  <div id="main">
-    <iframe width='100%' height='800px' src="https://api.mapbox.com/styles/v1/zakiyama2918/clbd85gkc000617qbgvpt942h.html?title=false&access_token=pk.eyJ1IjoiemFraXlhbWEyOTE4IiwiYSI6ImNsYjAxc29saDBvZTYzcm41ZzN4dGxoYXEifQ.kJhTa_wdLo6s0Wj_Em5_RQ&zoomwheel=false#8.13/35.506/139.406" title="Streets" style="border:none;"></iframe>
+  <div id="map">
   </div>
 </body>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiemFraXlhbWEyOTE4IiwiYSI6ImNsYjAxc29saDBvZTYzcm41ZzN4dGxoYXEifQ.kJhTa_wdLo6s0Wj_Em5_RQ';
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/zakiyama2918/clbd85gkc000617qbgvpt942h',
+      center: [138.2212, 35.5815],
+      zoom: 6
+  });
+  // Add search box. 
+  map.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl
+            })
+        );
+  // Add zoom and rotation controls to the map.
+  map.addControl(new mapboxgl.NavigationControl());
+</script>
+
 </html>

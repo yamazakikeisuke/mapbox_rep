@@ -27,7 +27,6 @@ header .inner {
 }
 
 /* header-navi */
-
 header .navi {
   margin: 0 0 0 auto;
   padding: 0;
@@ -53,15 +52,14 @@ header .navi li a:hover {
 }
 
 /* layout */
-
-body {
-  margin: 0;
-  padding: 0;
+body { 
+  height: 100%;
+  background: rgba(53, 52, 52, 70);
 }
-#main {
-  padding-top:0px;
-  background-color: rgb(47, 47, 47);
+html {
+  height: 100%; 
 }
+#map { height: 100%; width: 100%}
 
 .border-radius {
   width: 300px;
